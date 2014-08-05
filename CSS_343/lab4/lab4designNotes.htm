@@ -1,0 +1,49 @@
+Lab4 Design Notes (on following topics)
+-----------------
+1. everything is OO, short main
+2. don't violate basic ADT operations
+3. isolate I/O
+4. remember to generalize
+
+--------------------------------------------------------------------------
+1. everything is OO, short main
+
+Make sure you're doing everything completely object-oriented. 
+Everything should be a class.  So, your main should be very, very short. 
+If your main is long, you most likely need a "manager" class, a class
+that is the organization.  It's primary role is to own all the collections
+of the organization, build the collections, and run the organization. 
+Main may end up as short as three lines long.
+
+--------------------------------------------------------------------------
+2. don't violate basic ADT operations
+
+Remember to maintain object independence, modules which are self-
+contained units, independent of other modules.  A container ADT,
+for example, a list or tree, simply perform the operations of insert,
+remove, retrieve, etc.  They know nothing about what they contain.
+So, no list or tree methods manipulate the actual data stored.
+
+--------------------------------------------------------------------------
+3. isolate I/O
+
+Another design point -- Sometimes it's best to isolate I/O into a class by
+itself.  If you're doing generic kinds of interactive things, for example,
+setInteger (user inputs an integer), or displayWindow (in a GUI application),
+you can have a separate class to handle this.  In the class where you need
+to use it, say MyClass, you instantiate an I/O object and use the methods
+of the I/O class to do generic input and output with the class MyClass
+doing specific tasks for the problem.
+
+Since lab4 does all I/O in the display routine and has no interactive I/O,
+it's not as critical to do it here.  It could be useful for the command input
+in your lab4, but again the I/O is minimal.  It's a useful technique to
+remember for future use.
+
+--------------------------------------------------------------------------
+4. remember to generalize
+
+Lab4 has three different kinds of items to store, but what if you had 100? 
+Design to these type of changes. Your overall design shouldn't change and
+minimal classes/code would change.
+

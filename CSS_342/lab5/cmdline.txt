@@ -1,0 +1,2 @@
+cd CSS_342/lab5/lab5
+g++ bstree.cpp computetax.cpp deposit.cpp displayhistory.cpp firm.cpp lab5.cpp moveasset.cpp useraccount.cpp withdraw.cpp

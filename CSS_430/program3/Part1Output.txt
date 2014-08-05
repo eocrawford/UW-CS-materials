@@ -1,0 +1,25 @@
+[ethancr@uw1-320-18 ThreadOS]$ java Boot
+threadOS ver 1.0:
+Type ? for help
+threadOS: a new thread (thread=Thread[Thread-3,2,main] tid=0 pid=-1)
+-->l Shell
+l Shell
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+shell[1]% Test2
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=2)
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=2)
+threadOS: a new thread (thread=Thread[Thread-13,2,main] tid=5 pid=2)
+threadOS: a new thread (thread=Thread[Thread-15,2,main] tid=6 pid=2)
+threadOS: a new thread (thread=Thread[Thread-17,2,main] tid=7 pid=2)
+Thread[b]:(1000) response time = 4007 turnaround time = 5028 execution time = 1021
+Thread[e]:(500) response time = 7012 turnaround time = 7522 execution time = 510
+Thread[c]:(3000) response time = 5009 turnaround time = 8069 execution time = 3060
+Thread[a]:(5000) response time = 3005 turnaround time = 8106 execution time = 5101
+Exception in thread "Thread-0" java.lang.IllegalThreadStateException
+	at java.lang.Thread.start(Thread.java:595)
+	at Scheduler.run(Scheduler.java:145)
+Thread[d]:(6000) response time = 6010 turnaround time = 12130 execution time = 6120
+shell[2]% exit
+exit
+-->

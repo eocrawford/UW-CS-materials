@@ -1,0 +1,11 @@
+fossil record 567 234
+bluethroat orchid 123 222222
+aaaa bbbb 1 1
+moose bullwinkle 1 1
+squirrel rocky 1 1
+aaaaa aa 1 1
+zzzzz zz 1 1
+ghost casper 1 1
+rella barbara 1 1
+bear bertha 1 1
+

@@ -1,0 +1,8 @@
+threadOS: a new thread (thread=Thread[Thread-5,2,main] tid=1 pid=0)
+threadOS: a new thread (thread=Thread[Thread-7,2,main] tid=2 pid=1)
+threadOS: a new thread (thread=Thread[Thread-9,2,main] tid=3 pid=1)
+threadOS: a new thread (thread=Thread[Thread-11,2,main] tid=4 pid=1)
+Thread[CPU]: response time = 4001 turnaround time = 17086 execution time = 13085
+Thread[FileSystem]: response time = 2999 turnaround time = 22145 execution time = 19146
+Thread[FileSystem]: response time = 1999 turnaround time = 29142 execution time = 27143
+Test3 finished

@@ -1,0 +1,38 @@
+Script started on Mon 01 Oct 2007 06:46:40 PM PDT
+[ethancr@uw1-320-17 lab1]$ ./a.out
+A = +5x^7 -4x^3 +10x -2
+A (self-assignment) = +5x^7 -4x^3 +10x -2
+A += A = +10x^7 -8x^3 +20x -4
+A -= A = 0
+A = +5x^7 -4x^3 +10x -2
+A * A = +25x^14 -40x^10 +100x^8 -20x^7 +16x^6 -80x^4 +16x^3 +100x^2 -40x +4
+A *= A = +25x^14 -40x^10 +100x^8 -20x^7 +16x^6 -80x^4 +16x^3 +100x^2 -40x +4
+A *= zero = 0
+A = 0
+B = +3x^4 +1x^3
+
+Compute C = A + B +3x^4 +1x^3
+
+A is not == B
+A is not == B
+A < B
+A is not > B
+A <= B
+A is not >= B
+
+Compute  D = A * B - 15
+Before: D = +5x^7    and After: D = -15
+
+Test assignment operators
+X = -15    Y = 0
+
+Get and Set coefficient
+coeff of subscript 0 of D is: -15
+Doing getCoeff for term -20000
+D = +50x^20000 +50
+
+Q > R
+Q == R
+[ethancr@uw1-320-17 lab1]$ exit
+
+Script done on Mon 01 Oct 2007 06:46:46 PM PDT

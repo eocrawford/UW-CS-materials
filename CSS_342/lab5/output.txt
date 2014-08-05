@@ -1,0 +1,91 @@
+Withdrawal not performed on Money Market fund for client 6666;
+insufficient funds
+
+Withdrawal not performed on Money Market fund for client 6666;
+insufficient funds
+
+Tax on Long-Term Bond fund for client 3000 is $4160
+
+Tax on Value Stock Index fund for client 3000 is $240
+
+Withdrawal not performed on Prime Money Market fund for client 6666;
+insufficient funds
+
+Unknown transaction type 'Z' requested
+Unknown client ID 9999 requested
+Unknown client ID 1000 requested
+Unknown client ID 1111 or 9999 requested
+
+History of transactions for client mickey mouse, client ID = 1234
+Type      Amount  Detail
+--------- ------- --------------------------------------
+deposit   $   100 into Prime Money Market fund
+move      $  1000 from Prime Money Market fund
+                  to Long-Term Bond fund for client 3000
+withdraw  $    20 from Money Market fund
+history
+
+History of transactions for client minnie mouse, client ID = 3000
+Type      Amount  Detail
+--------- ------- --------------------------------------
+deposit   $  1000 into Long-Term Bond fund
+move      $   300 from Prime Money Market fund
+                  to Money Market fund for client 6000
+move      $   500 from Prime Money Market fund
+                  to Long-Term Bond fund for client 1234
+withdraw  $  5000 from Prime Money Market fund
+calc. tax         for Long-Term Bond fund
+withdraw  $   100 from Money Market fund
+withdraw  $   100 from Money Market fund
+deposit   $  1000 into Capital Value fund
+calc. tax         for Value Stock Index fund
+withdraw  $  1000 from Capital Value fund
+withdraw  $    20 from Prime Money Market fund
+history
+Unknown client ID 9999 requested
+
+REPORT
+
+1111  sammy spider
+Initial Balances:   4000   500     0     0     0     0     0     0     0     0
+Final Balances:     4000   500     0     0     0     0     0     0     0     0
+
+1234  mickey mouse
+Initial Balances:  20500  1000     0     0     0     0   500     0     0     0
+Final Balances:    20480   100   500     0     0     0   500     0     0     0
+
+2222  donald duck
+Initial Balances:  10000   500     0     0     0     0     0     0     0     0
+Final Balances:    10000   500     0     0     0     0     0     0     0     0
+
+2500  freddie frog
+Initial Balances:  38000  3000     0     0  2000     0     0     0     0     0
+Final Balances:    38000  3000     0     0  2000 10000     0     0     0     0
+
+3000  minnie mouse
+Initial Balances:  35000  2000 50000   400     0     0  4000     0     0  3000
+Final Balances:    30980     0 52000   400     0     0  4000     0     0  3000
+
+4200  bertha bear
+Initial Balances:   8000  1000     0     0     0     0     0     0     0     0
+Final Balances:     8275  1000     0     0     0     0     0     0     0     0
+
+5555  daffy duck
+Initial Balances:   4500   500     0     0     0     0     0     0     0     0
+Final Balances:      100     0     0     0     0     0     0     0     0     0
+
+6000  porky pig
+Initial Balances:  30000  1000     0     0     0     0     0     0     0     0
+Final Balances:    30300  8000     0     0     0     0     0     0     0     0
+
+6666  darrell donkey
+Initial Balances:     10   100     0     0  1000     0     0     0     0     0
+Final Balances:       30   100     0     0  1000     0     0     0     0     0
+
+7000  wicked witch
+Initial Balances:   5000   300     0     0   500     0     0     0     0     0
+Final Balances:     5000   300     0     0   500     0     0     0     0     0
+
+8888  larry lizard
+Initial Balances:   4500  2000     0     0     0     0     0     0     0     0
+Final Balances:     4500  2000     0     0     0     0     0     0     0     0

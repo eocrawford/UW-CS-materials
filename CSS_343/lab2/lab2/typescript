@@ -1,0 +1,55 @@
+Script started on Fri 12 Oct 2007 04:39:53 PM PDT
+[ethancr@uw1-320-17 lab2]$ ./a.out
+Initial data:
+  iii not tttt eee r not and jj r eee pp r sssss eee not tttt ooo ff m m y z $$ 
+Tree Inorder:
+and eee ff iii jj m not ooo pp r sssss tttt y z  
+Retrieve --> and:  found
+Retrieve --> not:  found
+Retrieve --> sss:  not found
+Depth    --> and:  3
+Depth    --> not:  2
+Depth    --> sss:  0
+T == T2?     equal
+T != first?  equal
+T == dup?    equal
+Tree Inorder:
+and eee ff iii jj m not ooo pp r sssss tttt y z  
+---------------------------------------------------------------
+Initial data:
+  b a c b a c $$ 
+Tree Inorder:
+a b c  
+Retrieve --> and:  not found
+Retrieve --> not:  not found
+Retrieve --> sss:  not found
+Depth    --> and:  0
+Depth    --> not:  0
+Depth    --> sss:  0
+T == T2?     equal
+T != first?  not equal
+T == dup?    not equal
+Tree Inorder:
+a b c  
+---------------------------------------------------------------
+Initial data:
+  c b a $$ 
+Tree Inorder:
+a b c  
+Retrieve --> and:  not found
+Retrieve --> not:  not found
+Retrieve --> sss:  not found
+Depth    --> and:  0
+Depth    --> not:  0
+Depth    --> sss:  0
+T == T2?     equal
+T != first?  not equal
+T == dup?    not equal
+Tree Inorder:
+a b c  
+---------------------------------------------------------------
+Initial data:
+   
+[ethancr@uw1-320-17 lab2]$ exit
+
+Script done on Fri 12 Oct 2007 04:39:57 PM PDT

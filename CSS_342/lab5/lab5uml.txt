@@ -1,0 +1,134 @@
+Unified Modeling Language (UML) Basics
+======================================
+
+A class of objects has common structure, common behavior, and common
+relationships. They are represented in the UML as a rectangle with three
+compartments for the name, attributes (data), and operations (functions).
+For your lab, you need only show the name in the class diagram.
+
+Class Diagrams show you the static nature of your system. These diagrams show
+the existence of classes and their relationships in the logical view of a
+system. In a larger system than your lab, you will have many class diagrams.
+
+The UML modeling elements found in class diagrams include
+-- Classes and their structure and behavior
+-- Association, aggregation, dependency, and inheritance relationships
+-- Multiplicity and navigation indicators
+
+Relationships represent a communication path between objects. There are many
+types of UML relationships including association, aggregation, and inheritance.
+Another important relationship is dependency which is a more subtle form of
+association. While some of your relationships may actually be dependence, for
+this lab, don't worry about it. In lab5, you will primarily have composition
+and the inheritance I've given you.
+
+Association is a bi-directional connection between classes. An association says
+I can send you a message because if I'm associated with you; I know you exist.
+This is represented in the UML as a line connecting the related classes,
+typically with a phrase on the line describing the association.
+
+    +----------+            +----------+
+    | Student  |    buys    |  Book    |
+    |          |------------|          |
+    +----------+            +----------+
+
+Aggregation is a stronger form where the relationship is between a whole
+and its parts. An aggregation says that there is a strong coupling
+between those object classes. This is also known more specifically as 
+composition and is represented in the UML as a line connecting the related
+classes with a diamond next to the class representing the whole. (For this
+course, don't worry about an open or a solid diamond. You'll care in CSS 370.) 
+
+Multiplicity defines how many objects participate in a relationship. It is the
+number of instances of one class related to one instance of the other class.
+For each association and aggregation, there are two multiplicity decisions to
+make: one for each end of the relationship. Multiplicity is represented as a
+number and a * is used to represent a multiplicity of many.
+
+    +----------+            +----------+
+    |          |  1        1|          |
+    | Student  |<>----------| Address  |   Explanation -- One Student object
+    |          |            |          |      has one Address object
+    +----------+            +----------+
+
+    +----------+            +----------+
+    |          |  1        *|          |
+    | CardDeck |<>----------|  Card    |   Explanation -- One CardDeck object 
+    |          |            |          |     is made of many Card objects
+    +----------+            +----------+
+
+Dependency is a weaker form showing the relationship between a client and a
+supplier where the client does not have semantic knowledge of the supplier.
+A dependency says I need your services, but I don't know you exist. This is
+represented in the UML as a dashed line pointing from the client to supplier.
+
+    +------------+        +---------------+
+    |Registration|- - - ->|RegistrationAlg|
+    +------------+        +---------------+
+
+Inheritance is the relationship between a parent and child class (terminology
+meaning the same thing is superclass and subclass, or base and derived class).
+A child class inherits (acquires) all members from the parent class and
+typically has more members allowing additional behavior. This is represented
+in UML with an arrow where the arrowhead is an open triangle.
+               +------------+
+               |   Person   |
+               +------------+
+                    /_\ 
+                     |
+                     |
+              +--------------+
+              |    Student   |
+              +--------------+
+                /_\       /_\
+                 |         |
+                 |         |
+        +-----------+   +---------+
+        | Undergrad |   |  Grad   |
+        +-----------+   +---------+
+
+UML for the inheritance in Lab5 
+===============================
+
+All the operations, 
+  D   buy shares, i.e., deposit funds
+  W   sell shares, i.e., withdraw funds
+  M   move assets between funds/clients
+  T   compute and display taxes on a fund, 8%
+  H   display the history of all transactions of all accounts of a client
+
+are derived from the Transaction class. Inheritance is represented by the is-a
+relationship, that is, a Deposit is-a Transaction, a Withdraw is-a Transaction, 
+and so on.
+                    +---------------------+
+                    |     Transaction     |
+                    +---------------------+
+                    /_\  /_\  /_\  /_\  /_\
+                    /     |     \   \     \
+                   /      |      \    \    \________________ 
+                  /       |       \     \                   |
+                 /        |        \      \                 |
+                /         |         \       \               |
+        +-------+  +--------+  +---------+  +----------+  +--------------+
+        |Deposit|  |Withdraw|  |MoveAsset|  |ComputeTax|  |DisplayHistory|
+        +-------+  +--------+  +---------+  +----------+  +--------------+
+
+This works in lab5 in the following way. Operation data comes from a datafile.
+For example, say the data is     
+    D 12341 100
+You will read a code, the 'D' which tells you to create a new Deposit object
+    Transaction* trans = new Deposit;
+Note that technically this is the same as
+    Deposit* dep = new Deposit;
+    Transaction* trans = dep;
+In both examples, the pointer to a Deposit object is cast to a pointer to a
+Transaction object.
+
+Now that you have a Transaction* (whatever kind of object it was to start with),
+setData can be used to read the rest of the data (the setData for each kind
+of object knows how to read the data for it)
+    trans->setData(infile);
+and the specific operation can be performed
+    trans->perform();
+and eventually displayed 
+    trans->display();

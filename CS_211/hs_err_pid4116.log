@@ -1,0 +1,49 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6d39a63f, pid=4116, tid=5072
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_09-b03 mixed mode)
+# Problematic frame:
+# C  [jdwp.dll+0x1a63f]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0033af80):  JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=5072]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x0000002c, EBX=0xffffffff, ECX=0x00000000, EDX=0x00000000
+ESP=0x0ae2fd08, EBP=0x0ae2fd10, ESI=0x000000ca, EDI=0x0ae2fd46
+EIP=0x6d39a63f, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0ae2fd08)
+0x0ae2fd08:   0ae2fd18 000000ca 0ae2fe28 6d22129b
+0x0ae2fd18:   0000002c 0ae2fe6c 000000ca 00000004
+0x0ae2fd28:   6b636f53 6f207465 61726570 6e6f6974
+0x0ae2fd38:   206e6f20 736e6f6e 656b636f 00000074
+0x0ae2fd48:   0ae2fd30 000954c0 00000000 0ae2fd38
+0x0ae2fd58:   00337264 0ae2ff70 77c35c94 77c12070
+0x0ae2fd68:   ffffffff 77c2c2e3 5560b225 0036ca88
+0x0ae2fd78:   00000000 0ae2fd8c 5560b675 00000001 
+
+Instructions: (pc=0x6d39a63f)
+0x6d39a62f:   5d c3 8b 0d e0 05 3b 6d 8d 55 08 56 52 8b 09 99
+0x6d39a63f:   8b 31 52 50 51 ff 96 b4 00 00 00 8b f0 85 f6 74 
+
+
+Stack: [0x0adf0000,0x0ae30000),  sp=0x0ae2fd08,  free space=255k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [jdwp.dll+0x1a63f]
+C  [dt_socket.dll+0x129b]
+C  [dt_socket.dll+0x1cd8]
+C  [jdwp.dll+0x16ea6]
+V  [jvm.dll+0xbebf8]
+V  [jvm.dll+0x10f4ac]
+V  [jvm.dll+0x10f47a]
+C  [MSVCRT.dll+0x2a3b0]
+C  [kernel32.dll+0xb683]
+
+

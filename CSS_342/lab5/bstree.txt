@@ -1,0 +1,111 @@
+Notes on Binary Search Trees
+============================
+
+buildTree outline
+-----------------
+loop if desired {
+   NodeData* p = new NodeData;           // get memory for data
+   p->setNodeData(...);                  // fill up with data
+   bool success = mytree.insert(p);      // attempt to insert
+   if (!success)                         // deallocate memory and whatever else
+   ...
+}
+
+
+Visualization of NodeData memory:
+--------------------------------
+                  +-------+
+NodeData:    p--> | stuff |
+                  +-------+
+
+
+Visualization of Node and NodeData memory:
+-----------------------------------------
+               data
+             +-------+    +-------+
+Node:        |   ----|--> | stuff |
+             |-------|    +-------+
+      ptr--> | / | \ |
+             +/-----\+
+       left  /       \  right
+          <--         -->  
+
+Node is a binary tree Node.  It can be a private struct nested inside BSTree,
+public struct outside BSTree, or a class either place.  Define it where
+you'd like.  BUT you must use a NodeData* (you can name it something different
+than NodeData) to store the data.  Wherever it is, it must have:
+         NodeData* data;
+         Node* left;
+         Node* right;
+We do this for the object-oriented paradigm.  We separate the data stored from
+its container.  We could have an array, list, queue, etc. of NodeData.
+
+The Node is strictly a tree need.  NodeData has no direct relation to the tree.
+
+class BSTree {
+public:
+   ...
+private:
+   struct Node {
+      NodeData* data;           // pointer to actual data stored
+      Node* left;               // pointer to left child Node, left subtree
+      Node* right;              // pointer to right child Node, right subtree
+   };
+   Node* root;
+};
+
+
+
+BSTree insert routine
+---------------------
+
+Below is an iterative solution to insert.  It traverses one branch.
+Note that this assumes "operator<" exists for a NodeData object.
+The line of code:
+         if (*ptr->data < *current->data) 
+calls "operator<" for NodeData objects.  Both *ptr->data and *current->data
+are NodeData objects.  Without the asterisks, they pointers.  Dereferencing,
+including the asterisks gives the objects.
+
+If *ptr->data is called A, and *current->data is called B, then the condition
+above is equivalent to:  A < B 
+which is:                A.operator<(B)     for NodeData objects.
+
+bool BSTree::insert(NodeData* dataptr) {
+   Node* ptr = new Node;
+   assert (ptr != NULL);               // or:  if (ptr == NULL) return false;
+   ptr->data = dataptr;
+   ptr->left = ptr->right = NULL;
+   if (isEmpty()) {
+      root = ptr;
+   }
+   else {
+      Node* current = root;
+      bool inserted = false;
+
+      // if item is less than current item, insert in left subtree,
+      // otherwise insert in right subtree
+      while (!inserted) {
+         if (*ptr->data < *current->data) {
+            if (current->left == NULL) {              // insert left
+               current->left = ptr;
+               inserted = true;
+            }
+            else
+               current = current->left;               // one step left
+         }
+         else {
+            if (current->right == NULL) {             // insert right
+               current->right = ptr;
+               inserted = true;
+            }
+            else
+               current = current->right;              // one step right
+         }
+      }
+   }
+   return true;
+}
+
+// Note:  left for <,  right for >=,  handle == separately if desired.
+

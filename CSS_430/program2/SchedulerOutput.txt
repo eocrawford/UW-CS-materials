@@ -1,0 +1,6 @@
+Thread[e]: response time = 2582 turnaround time = 3092 execution time = 510
+Thread[b]: response time = 1032 turnaround time = 5576 execution time = 4544
+Thread[c]: response time = 1549 turnaround time = 13732 execution time = 12183
+Thread[a]: response time = 516 turnaround time = 21386 execution time = 20870
+Thread[d]: response time = 2065 turnaround time = 28021 execution time = 25956
+ 
